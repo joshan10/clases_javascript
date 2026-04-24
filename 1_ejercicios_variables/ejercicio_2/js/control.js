@@ -2,29 +2,29 @@
 
 //
 function mostrarStatus() {
-    console.log("Revisando: " + tanqueID); 
     const tanqueID = "T-400";
+    console.log("Revisando: " + tanqueID); 
 }
 
 //
 let nivelOxigeno = 100;
-let nivelOxigeno = 85; 
+nivelOxigeno = 85; 
 
 //
 function iniciarProceso() {
     if (true) {
         let mensajeInterno = "OXÍGENO OK";
+        document.getElementById('log-display').innerText = mensajeInterno;
     }
     // 
-    document.getElementById('log-display').innerText = mensajeInterno;
 }
 
 //
 function sistemaDeControl() {
     let revisiones = 0;
     // Un closure debe retornar la función para mantener el vínculo permanente con su scope [9, 10].
-    function incrementar() {
-        revisiones = revisiones + 1;
+    return function() {
+        revisiones++;
         return "Revisiones totales: " + revisiones;
     }
 }

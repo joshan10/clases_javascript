@@ -1,7 +1,8 @@
-let saludo = "Hola parce ";
+let resultado = 5;
 
-function saludar(nombre){
-    return saludo+nombre;
+function sumar(num1, num2){
+    resultado = num1+num2;
+    return resultado;
 }
 
-console.log(saludar('Mauricio'));
+console.log(sumar(4,5));
