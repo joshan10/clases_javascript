@@ -2,11 +2,12 @@
     "@context": "https://schema.org",
     "@type": "Recipe",
     "name": "Pastel de Manzana",
+    "fecha_receta": 2026,
     "recipeIngredient": [
         "3 manzanas",
         "250g de harina"
     ],
-    "pasos": [
+     "pasos": [
         "Limpiar manzanas",
         "Cortar manzanas en julianas",
         "Echarlas en un recipiente",

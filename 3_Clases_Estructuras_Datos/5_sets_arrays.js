@@ -13,3 +13,4 @@ console.log(s.size);
 const a = [1, 2, 1, 3, 6, 6, "😂", 4, 1, 2];
 a.push(45);
 console.log(a.length);
+console.log(a[6]);

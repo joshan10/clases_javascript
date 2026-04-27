@@ -1,5 +1,5 @@
 // Cadena → número
-let n = Number('100'); // 100
+let n = Number('5.6'); // 100
 let m = parseInt('3.7'); // 3
 console.log(n);
 console.log(m);

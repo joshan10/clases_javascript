@@ -5,4 +5,4 @@ map.set(objKey, "datos");
 map.set(42, "numero");
 map.set(true, "booleano");
 
-console.log(map.get(objKey)); // "datos"
+console.log(map.get(42)); // "datos"

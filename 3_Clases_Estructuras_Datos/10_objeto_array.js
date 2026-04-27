@@ -1,10 +1,10 @@
 const f = ["Manzana", "Banana", "Naranja", "Pera"];
 f.push("Kiwi");
 
-//console.log(f.length);
-//console.log(f[2]);
-//var total = f.length;
-//console.log(f[total-1]);
+console.log(f.length);
+console.log(f[2]);
+var total = f.length;
+console.log(f[total-1]);
 
 // Métodos esenciales
 
