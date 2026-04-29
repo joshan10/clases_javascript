@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LATTICE OS — Planificador de Misiones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles-misiones.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" class="brand-logo">
+        <polygon points="12,2 22,7 22,17 12,22 2,17 2,7" stroke="#00ff9f" stroke-width="1.5" fill="none"/>
+      </svg>
+      <span class="brand-name">LATTICE <span class="brand-pipe">|</span> <span class="brand-sub">SISTEMA DE CONTROL TÁCTICO</span></span>
+    </div>
+    <div class="topbar-right">
+      <div class="status-chip green"><span class="blink-dot"></span>SISTEMA EN LÍNEA</div>
+      <div class="clock mono" id="reloj">00:00:00Z</div>
+      <div class="status-chip orange"><span class="blink-dot"></span>ACTIVAS: <span id="contMisiones">0</span></div>
+    </div>
+  </header>
+
+  <div class="workspace">
+
+    <nav class="panel-left">
+      <div class="panel-title">// UNIDADES DESPLEGADAS</div>
+      <div class="filter-bar">
+        <button class="fbtn active" data-f="todas"      onclick="filtrarMisiones('todas')">TODAS</button>
+        <button class="fbtn"        data-f="activa"     onclick="filtrarMisiones('activa')">ACTIVA</button>
+        <button class="fbtn"        data-f="en-vuelo"   onclick="filtrarMisiones('en-vuelo')">VUELO</button>
+        <button class="fbtn"        data-f="alerta"     onclick="filtrarMisiones('alerta')">ALERTA</button>
+        <button class="fbtn"        data-f="completada" onclick="filtrarMisiones('completada')">COMPL.</button>
+      </div>
+      <div id="listaMisiones" class="mission-list"></div>
+    </nav>
+
+    <main class="panel-center">
+      <div class="grid-topbar">
+        <span>// CUADRÍCULA TÁCTICA — SECTOR ALFA-7</span>
+        <span class="mono">PROYECCIÓN: MERCATOR · ESCALA 1:500K</span>
+      </div>
+      <div class="tac-grid" id="tacGrid">
+        <div id="misionNodes" class="nodes-layer"></div>
+        <div class="grid-corner tl">A1</div>
+        <div class="grid-corner tr">H1</div>
+        <div class="grid-corner bl">A8</div>
+        <div class="grid-corner br">H8</div>
+      </div>
+      <div class="grid-bottombar">
+        <span id="selectedLabel">NINGUNA MISIÓN SELECCIONADA</span>
+        <button class="btn-launch" onclick="activarMision()">&#9654; ACTIVAR MISIÓN</button>
+      </div>
+    </main>
+
+    <aside class="panel-right">
+      <div class="panel-title">// TELEMETRÍA EN TIEMPO REAL</div>
+      <div class="telem-grid">
+        <div class="telem-cell"><div class="tl">PLATAFORMA</div><div class="tv" id="t-plataforma">---</div></div>
+        <div class="telem-cell"><div class="tl">ESTADO</div><div class="tv" id="t-estado">---</div></div>
+        <div class="telem-cell"><div class="tl">COMBUSTIBLE</div><div class="tv" id="t-combustible">--- %</div></div>
+        <div class="telem-cell"><div class="tl">ALTITUD</div><div class="tv" id="t-altitud">--- m</div></div>
+        <div class="telem-cell"><div class="tl">VELOCIDAD</div><div class="tv" id="t-velocidad">--- km/h</div></div>
+        <div class="telem-cell"><div class="tl">ÍNDICE RIESGO</div><div class="tv" id="t-riesgo">---</div></div>
+      </div>
+      <div class="panel-title" style="margin-top:18px">// WAYPOINTS</div>
+      <div id="waypointList" class="wp-list"></div>
+      <div class="panel-title" style="margin-top:18px">// DISTANCIA TOTAL RUTA</div>
+      <div class="mono telem-big" id="distanciaRuta">--- km</div>
+    </aside>
+
+  </div>
+
+  <script src="js/control-misiones.js"></script>
+</body>
+</html>

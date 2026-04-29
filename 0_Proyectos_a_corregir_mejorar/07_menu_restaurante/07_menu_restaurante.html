@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabores &amp; Co — Menú Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles-restaurante.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon">&#127869;</span>
+        <div>
+          <div class="brand-name">Sabores &amp; Co</div>
+          <div class="brand-tagline">Cocina de autor · Bogotá</div>
+        </div>
+      </div>
+      <button class="cart-btn" onclick="toggleCarrito()">
+        &#128722; Ver pedido <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <main class="menu-main">
+      <nav class="categoria-tabs" id="categoriaTabs"></nav>
+      <div class="platos-grid" id="platosGrid"></div>
+    </main>
+
+    <aside class="carrito-panel" id="carritoPanel">
+      <h2 class="carrito-title">Tu pedido</h2>
+      <div id="carritoItems" class="carrito-items">
+        <p class="empty-cart">Agrega platos para comenzar.</p>
+      </div>
+      <div class="carrito-footer">
+        <div class="total-row">
+          <span>Total</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <button class="btn-pagar">Confirmar pedido</button>
+      </div>
+    </aside>
+
+  </div>
+
+  <div class="toast" id="toast">¡Plato agregado! &#127881;</div>
+
+  <script src="js/control-restaurante.js"></script>
+</body>
+</html>

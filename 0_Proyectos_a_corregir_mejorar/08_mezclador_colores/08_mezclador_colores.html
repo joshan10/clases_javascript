@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChromaMix Pro — Mezclador de Colores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles-mezclador.css">
+</head>
+<body>
+
+  <div class="device-frame">
+
+    <div class="device-brand">CHROMAMIX PRO <span class="model-tag">CM-800</span></div>
+
+    <div class="lcd-display">
+      <div class="lcd-screen">
+        <div class="lcd-label mono">COLOR PREVIEW</div>
+        <div class="lcd-color-preview" id="colorPreview"></div>
+        <div class="lcd-hex mono" id="lcdHex">#808080</div>
+        <div class="lcd-values mono" id="lcdValues">R:128 G:128 B:128</div>
+        <div class="lcd-brillo mono">LUM: <span id="brilloDisplay">128</span></div>
+      </div>
+    </div>
+
+    <div class="controls-section">
+      <div class="channel-row">
+        <div class="channel-label red">R</div>
+        <input type="range" min="0" max="255" value="128" class="slider slider-r" id="sliderR" oninput="actualizarColor()">
+        <div class="channel-value" id="valR">128</div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-label green">G</div>
+        <input type="range" min="0" max="255" value="128" class="slider slider-g" id="sliderG" oninput="actualizarColor()">
+        <div class="channel-value" id="valG">128</div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-label blue">B</div>
+        <input type="range" min="0" max="255" value="128" class="slider slider-b" id="sliderB" oninput="actualizarColor()">
+        <div class="channel-value" id="valB">128</div>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <button class="hw-btn" onclick="guardarColor()">&#128190; SAVE</button>
+      <button class="hw-btn" onclick="copiarHex()">&#128203; COPY HEX</button>
+      <button class="hw-btn red-btn" onclick="resetColor()">&#8635; RESET</button>
+    </div>
+
+    <div class="historial-section">
+      <div class="section-divider">&#9135;&#9135; HISTORIAL &#9135;&#9135;</div>
+      <div id="historialSwatches" class="swatches-row"></div>
+    </div>
+
+    <div class="presets-section">
+      <div class="section-divider">&#9135;&#9135; PRESETS &#9135;&#9135;</div>
+      <div class="swatches-row" id="presetsRow"></div>
+    </div>
+
+  </div>
+
+  <script src="js/control-mezclador.js"></script>
+</body>
+</html>

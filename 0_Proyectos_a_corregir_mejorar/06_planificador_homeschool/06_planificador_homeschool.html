@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CasaEstudio — Planeador de Educación en Casa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles-homeschool.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="logo">&#127968; CasaEstudio</div>
+      <div class="header-stats">
+        <div class="stat-bubble blue">&#128218; Materias: <strong id="totalMaterias">0</strong></div>
+        <div class="stat-bubble green">&#9989; Completadas: <strong id="actividadesHoy">0</strong></div>
+        <div class="stat-bubble purple">&#9201; Min hoy: <strong id="totalMinDisplay">0</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <section class="materias-section">
+      <h2 class="section-title">Mis Materias</h2>
+      <div class="materias-grid" id="materiasGrid"></div>
+    </section>
+
+    <section class="actividades-section">
+      <div class="actividades-header">
+        <h2 class="section-title" id="actividadesLabel">Selecciona una materia</h2>
+        <button class="btn-add" onclick="mostrarFormActividad()">+ Nueva Actividad</button>
+      </div>
+
+      <div class="form-card" id="formActividad" style="display:none">
+        <input type="text"   id="inputTitulo"  placeholder="Título de la actividad" class="clay-input" />
+        <input type="number" id="inputMinutos" placeholder="Duración (minutos)"     class="clay-input" />
+        <input type="text"   id="inputDesc"    placeholder="Descripción breve"       class="clay-input" />
+        <div class="form-actions">
+          <button class="btn-save"   onclick="guardarActividad()">Guardar</button>
+          <button class="btn-cancel" onclick="cancelarForm()">Cancelar</button>
+        </div>
+      </div>
+
+      <div id="actividadesList" class="actividades-list">
+        <p class="empty-msg">&#128070; Elige una materia para ver sus actividades.</p>
+      </div>
+    </section>
+
+    <section class="resumen-section">
+      <h2 class="section-title">Resumen del Día</h2>
+      <div class="resumen-card">
+        <div class="resumen-row"><span>Total de minutos:</span><strong id="r-minutos">0</strong></div>
+        <div class="resumen-row"><span>Promedio por actividad:</span><strong id="r-promedio">—</strong></div>
+        <div class="resumen-row"><span>Actividades completadas:</span><strong id="r-completadas">0 / 0</strong></div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/control-homeschool.js"></script>
+</body>
+</html>
