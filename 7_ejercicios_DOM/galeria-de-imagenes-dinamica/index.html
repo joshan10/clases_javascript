@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Galeria de Imagenes Dinamica</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="galeria">
+		<h1>Galeria Dinamica</h1>
+
+		<figure class="imagen-principal-contenedor">
+			<img id="imagen-principal" src="src/1.png" alt="Imagen principal de la galeria">
+			<figcaption id="descripcion">Imagen 1</figcaption>
+		</figure>
+
+		<section class="miniaturas" aria-label="Miniaturas de la galeria">
+			<button class="miniatura activa" data-src="src/1.png" data-texto="Imagen 1" type="button" aria-label="Mostrar imagen 1">
+				<img src="src/1.png" alt="Miniatura 1">
+			</button>
+			<button class="miniatura" data-src="src/2.png" data-texto="Imagen 2" type="button" aria-label="Mostrar imagen 2">
+				<img src="src/2.png" alt="Miniatura 2">
+			</button>
+			<button class="miniatura" data-src="src/3.jpg" data-texto="Imagen 3" type="button" aria-label="Mostrar imagen 3">
+				<img src="src/3.jpg" alt="Miniatura 3">
+			</button>
+		</section>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>

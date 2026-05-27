@@ -6,6 +6,6 @@ const colores = ["tomato", "green", "royalblue", "orange", "purple", "Yellow", "
 let i = 0;
 
 boton.addEventListener("click", () => {
-    i = (i + 1) % colores.length;
+    i = (i +1) % colores.length;
     circulo.setAttribute("fill", colores[i]);
 });

@@ -13,14 +13,5 @@ boton.addEventListener("click", () => {
         <hr>
     `;
     contenedor.style.borderColor = "#16a34a";
-    contenedor.style.boxShadow = "10px 10px 10px purple";
-    if(estado){
-        contenedor.style.transform = "rotate(45deg)";
-        contenedor.style.transition = "all 0.3s ease"
-        estado = false;
-    }else{
-        contenedor.style.transform = "rotate(0deg)";
-        contenedor.style.transition = "all 0.3s ease"
-        estado = true;
-    }
+    contenedor.style.boxShadow = "10px 10px 10px purple"
 });

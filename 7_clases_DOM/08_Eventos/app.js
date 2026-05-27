@@ -9,6 +9,4 @@ boton.addEventListener("click", (event) => {
     resultados.textContent = `Clic #${contador} en (${event.clientX}, ${event.clientY})`;
 });
 
-window.addEventListener("click", (event) => {
-    alert(`Clic en pantalla en (${event.clientX}, ${event.clientY}): `);
-});
+window.addEventListener("click", () => alert(`Click en pantalla en el eje x: ${clientX}, y eje Y: ${clientY}`));

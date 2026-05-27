@@ -9,8 +9,9 @@ boton.addEventListener("click", () => {
         console.log(items.length);
         items.forEach((item, idx) => {
         item.style.background = "#bbf7d0";
-        item.textContent = `${idx + 1}. ${item.textContent}`;
-        i = true;
+        if (!item.textContent.startsWith(`${idx + 1}. `)) {
+            item.textContent = `${idx + 1}. ${item.textContent}`;
+        }
     });
     }
     
