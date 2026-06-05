@@ -1,7 +1,7 @@
-console.log("1. Inicio");
+console.log("1. pedi la pizza");
 
 setTimeout(() => {
-    console.log("3. Tras 2 segundos");
-}, 2000);
+    console.log("2. tonto esperando la pizza");
+}, 4000);
 
-console.log("2. Fin del script");
+console.log("El amigo del tonto trabajando mientras llega la pizza");

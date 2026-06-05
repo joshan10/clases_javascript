@@ -10,6 +10,8 @@ const usuario = {
         return this.edad;
     }
 };
+
+
 console.log(usuario.saludar());
 // → "Hola, soy Alex"
 console.log(usuario.cumplir());

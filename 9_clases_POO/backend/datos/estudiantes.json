@@ -1,0 +1,179 @@
+[
+  {
+    "id": 1,
+    "primerNombre": "Juan",
+    "segundoNombre": "Carlos",
+    "primerApellido": "Pérez",
+    "segundoApellido": "Gómez",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "1234567890",
+    "fechaNacimiento": "2000-01-01",
+    "matricula": {
+      "id": 1,
+      "costo": 500000,
+      "promocion": "Promoción 2024",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería de Sistemas"
+    },
+    "materias": [
+      { "id": 1, "nombre": "Matemáticas", "creditos": 4 },
+      { "id": 2, "nombre": "Física", "creditos": 3 },
+      { "id": 3, "nombre": "Química", "creditos": 2 }
+    ]
+  },
+  {
+    "id": 2,
+    "primerNombre": "María",
+    "segundoNombre": "Fernanda",
+    "primerApellido": "López",
+    "segundoApellido": "Rodríguez",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "0987654321",
+    "fechaNacimiento": "1999-05-15",
+    "matricula": {
+      "id": 2,
+      "costo": 450000,
+      "promocion": "Promoción 2024",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería Industrial"
+    },
+    "materias": [
+      { "id": 4, "nombre": "Programación", "creditos": 5 },
+      { "id": 5, "nombre": "Algoritmos", "creditos": 4 },
+      { "id": 6, "nombre": "Estructuras de Datos", "creditos": 3 }
+    ]
+  },
+  {
+    "id": 3,
+    "primerNombre": "Carlos",
+    "segundoNombre": "Andrés",
+    "primerApellido": "García",
+    "segundoApellido": "Martínez",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "1122334455",
+    "fechaNacimiento": "2001-09-30",
+    "matricula": {
+      "id": 3,
+      "costo": 400000,
+      "promocion": "Promoción 2024",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería Civil"
+    },
+    "materias": [
+      { "id": 7, "nombre": "Bases de Datos", "creditos": 4 },
+      { "id": 8, "nombre": "Redes", "creditos": 3 },
+      { "id": 9, "nombre": "Sistemas Operativos", "creditos": 4 },
+      { "id": 10, "nombre": "Inteligencia Artificial", "creditos": 5 }
+    ]
+  },
+  {
+    "id": 4,
+    "primerNombre": "Ana",
+    "segundoNombre": "Sofía",
+    "primerApellido": "Ramírez",
+    "segundoApellido": "Hernández",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "5566778899",
+    "fechaNacimiento": "2000-12-20",
+    "matricula": {
+      "id": 4,
+      "costo": 500000,
+      "promocion": "Promoción 2024",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería de Sistemas"
+    },
+    "materias": [
+      { "id": 1, "nombre": "Matemáticas", "creditos": 4 },
+      { "id": 4, "nombre": "Programación", "creditos": 5 },
+      { "id": 7, "nombre": "Bases de Datos", "creditos": 4 }
+    ]
+  },
+  {
+    "id": 5,
+    "primerNombre": "Luis",
+    "segundoNombre": "Miguel",
+    "primerApellido": "Torres",
+    "segundoApellido": "Díaz",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "6677889900",
+    "fechaNacimiento": "1998-03-10",
+    "matricula": {
+      "id": 5,
+      "costo": 450000,
+      "promocion": "Promoción 2024",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería Industrial"
+    },
+    "materias": [
+      { "id": 2, "nombre": "Física", "creditos": 3 },
+      { "id": 5, "nombre": "Algoritmos", "creditos": 4 },
+      { "id": 8, "nombre": "Redes", "creditos": 3 }
+    ]
+  },
+  {
+    "id": 6,
+    "primerNombre": "Sofía",
+    "segundoNombre": "Isabel",
+    "primerApellido": "Vargas",
+    "segundoApellido": "Gómez",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "7788990011",
+    "fechaNacimiento": "2002-07-25",
+    "matricula": {
+      "id": 6,
+      "costo": 400000,
+      "promocion": "Promoción 2024",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería Civil"
+    },
+    "materias": [
+      { "id": 3, "nombre": "Química", "creditos": 2 },
+      { "id": 6, "nombre": "Estructuras de Datos", "creditos": 3 },
+      { "id": 9, "nombre": "Sistemas Operativos", "creditos": 4 }
+    ]
+  },
+  {
+    "id": 7,
+    "primerNombre": "Andrés",
+    "segundoNombre": "Felipe",
+    "primerApellido": "Mendoza",
+    "segundoApellido": "López",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "8899001122",
+    "fechaNacimiento": "1999-11-05",
+    "matricula": {
+      "id": 1,
+      "costo": 500000,
+      "promocion": "Promoción 2024",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería de Sistemas"
+    },
+    "materias": [
+      { "id": 1, "nombre": "Matemáticas", "creditos": 4 },
+      { "id": 5, "nombre": "Algoritmos", "creditos": 4 },
+      { "id": 9, "nombre": "Sistemas Operativos", "creditos": 4 }
+    ]
+  },
+  {
+    "id": 8,
+    "primerNombre": "Valentina",
+    "segundoNombre": "Camila",
+    "primerApellido": "Sánchez",
+    "segundoApellido": "Martínez",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "9900112233",
+    "fechaNacimiento": "2001-04-18",
+    "matricula": {
+      "id": 2,
+      "costo": 450000,
+      "promocion": "Promoción 2024",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería Industrial"
+    },
+    "materias": [
+      { "id": 2, "nombre": "Física", "creditos": 3 },
+      { "id": 6, "nombre": "Estructuras de Datos", "creditos": 3 },
+      { "id": 10, "nombre": "Inteligencia Artificial", "creditos": 5 }
+    ]
+  }
+]
