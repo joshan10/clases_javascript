@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de estudiantes</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="contenedor-formulario">
+        <section class="tarjeta-formulario">
+            <h1>Registro de estudiantes</h1>
+            <p class="ayuda">Completa el formulario y guarda el estudiante en el sistema.</p>
+
+            <form id="formularioEstudiante">
+                <div class="grupo">
+                    <label for="primerNombre">Primer nombre</label>
+                    <input type="text" id="primerNombre" name="primerNombre" required>
+                </div>
+
+                <div class="grupo">
+                    <label for="segundoNombre">Segundo nombre</label>
+                    <input type="text" id="segundoNombre" name="segundoNombre">
+                </div>
+
+                <div class="grupo">
+                    <label for="primerApellido">Primer apellido</label>
+                    <input type="text" id="primerApellido" name="primerApellido" required>
+                </div>
+
+                <div class="grupo">
+                    <label for="segundoApellido">Segundo apellido</label>
+                    <input type="text" id="segundoApellido" name="segundoApellido">
+                </div>
+
+                <div class="grupo">
+                    <label for="tipoDocumento">Tipo de documento</label>
+                    <select id="tipoDocumento" name="tipoDocumento" required>
+                        <option value="">Selecciona</option>
+                        <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                        <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+
+                <div class="grupo">
+                    <label for="numeroDocumento">Número de documento</label>
+                    <input type="text" id="numeroDocumento" name="numeroDocumento" required>
+                </div>
+
+                <div class="grupo">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                </div>
+
+                <h2>Datos de matrícula</h2>
+
+                <div class="grupo">
+                    <label for="costoMatricula">Costo</label>
+                    <input type="number" id="costoMatricula" name="costoMatricula" min="0">
+                </div>
+
+                <div class="grupo">
+                    <label for="promocionMatricula">Promoción</label>
+                    <input type="text" id="promocionMatricula" name="promocionMatricula">
+                </div>
+
+                <div class="grupo">
+                    <label for="fechaMatricula">Fecha de matrícula</label>
+                    <input type="date" id="fechaMatricula" name="fechaMatricula">
+                </div>
+
+                <div class="grupo">
+                    <label for="carreraMatricula">Carrera</label>
+                    <input type="text" id="carreraMatricula" name="carreraMatricula">
+                </div>
+
+                <h2>Materias</h2>
+
+                <div class="grupo">
+                    <label for="materias">Materias (una por linea: Nombre,Creditos)</label>
+                    <textarea id="materias" name="materias" rows="5" placeholder="Matemáticas,4
+Programación,5"></textarea>
+                </div>
+
+                <button type="submit" class="boton-primario">Guardar estudiante</button>
+                <p id="mensajeFormulario" class="mensaje"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/logica.js" defer></script>
+</body>
+</html>

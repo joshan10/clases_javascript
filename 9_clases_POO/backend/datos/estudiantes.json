@@ -16,9 +16,21 @@
       "carrera": "Ingeniería de Sistemas"
     },
     "materias": [
-      { "id": 1, "nombre": "Matemáticas", "creditos": 4 },
-      { "id": 2, "nombre": "Física", "creditos": 3 },
-      { "id": 3, "nombre": "Química", "creditos": 2 }
+      {
+        "id": 1,
+        "nombre": "Matemáticas",
+        "creditos": 4
+      },
+      {
+        "id": 2,
+        "nombre": "Física",
+        "creditos": 3
+      },
+      {
+        "id": 3,
+        "nombre": "Química",
+        "creditos": 2
+      }
     ]
   },
   {
@@ -38,9 +50,21 @@
       "carrera": "Ingeniería Industrial"
     },
     "materias": [
-      { "id": 4, "nombre": "Programación", "creditos": 5 },
-      { "id": 5, "nombre": "Algoritmos", "creditos": 4 },
-      { "id": 6, "nombre": "Estructuras de Datos", "creditos": 3 }
+      {
+        "id": 4,
+        "nombre": "Programación",
+        "creditos": 5
+      },
+      {
+        "id": 5,
+        "nombre": "Algoritmos",
+        "creditos": 4
+      },
+      {
+        "id": 6,
+        "nombre": "Estructuras de Datos",
+        "creditos": 3
+      }
     ]
   },
   {
@@ -60,10 +84,26 @@
       "carrera": "Ingeniería Civil"
     },
     "materias": [
-      { "id": 7, "nombre": "Bases de Datos", "creditos": 4 },
-      { "id": 8, "nombre": "Redes", "creditos": 3 },
-      { "id": 9, "nombre": "Sistemas Operativos", "creditos": 4 },
-      { "id": 10, "nombre": "Inteligencia Artificial", "creditos": 5 }
+      {
+        "id": 7,
+        "nombre": "Bases de Datos",
+        "creditos": 4
+      },
+      {
+        "id": 8,
+        "nombre": "Redes",
+        "creditos": 3
+      },
+      {
+        "id": 9,
+        "nombre": "Sistemas Operativos",
+        "creditos": 4
+      },
+      {
+        "id": 10,
+        "nombre": "Inteligencia Artificial",
+        "creditos": 5
+      }
     ]
   },
   {
@@ -83,9 +123,21 @@
       "carrera": "Ingeniería de Sistemas"
     },
     "materias": [
-      { "id": 1, "nombre": "Matemáticas", "creditos": 4 },
-      { "id": 4, "nombre": "Programación", "creditos": 5 },
-      { "id": 7, "nombre": "Bases de Datos", "creditos": 4 }
+      {
+        "id": 1,
+        "nombre": "Matemáticas",
+        "creditos": 4
+      },
+      {
+        "id": 4,
+        "nombre": "Programación",
+        "creditos": 5
+      },
+      {
+        "id": 7,
+        "nombre": "Bases de Datos",
+        "creditos": 4
+      }
     ]
   },
   {
@@ -105,9 +157,21 @@
       "carrera": "Ingeniería Industrial"
     },
     "materias": [
-      { "id": 2, "nombre": "Física", "creditos": 3 },
-      { "id": 5, "nombre": "Algoritmos", "creditos": 4 },
-      { "id": 8, "nombre": "Redes", "creditos": 3 }
+      {
+        "id": 2,
+        "nombre": "Física",
+        "creditos": 3
+      },
+      {
+        "id": 5,
+        "nombre": "Algoritmos",
+        "creditos": 4
+      },
+      {
+        "id": 8,
+        "nombre": "Redes",
+        "creditos": 3
+      }
     ]
   },
   {
@@ -127,9 +191,21 @@
       "carrera": "Ingeniería Civil"
     },
     "materias": [
-      { "id": 3, "nombre": "Química", "creditos": 2 },
-      { "id": 6, "nombre": "Estructuras de Datos", "creditos": 3 },
-      { "id": 9, "nombre": "Sistemas Operativos", "creditos": 4 }
+      {
+        "id": 3,
+        "nombre": "Química",
+        "creditos": 2
+      },
+      {
+        "id": 6,
+        "nombre": "Estructuras de Datos",
+        "creditos": 3
+      },
+      {
+        "id": 9,
+        "nombre": "Sistemas Operativos",
+        "creditos": 4
+      }
     ]
   },
   {
@@ -149,9 +225,21 @@
       "carrera": "Ingeniería de Sistemas"
     },
     "materias": [
-      { "id": 1, "nombre": "Matemáticas", "creditos": 4 },
-      { "id": 5, "nombre": "Algoritmos", "creditos": 4 },
-      { "id": 9, "nombre": "Sistemas Operativos", "creditos": 4 }
+      {
+        "id": 1,
+        "nombre": "Matemáticas",
+        "creditos": 4
+      },
+      {
+        "id": 5,
+        "nombre": "Algoritmos",
+        "creditos": 4
+      },
+      {
+        "id": 9,
+        "nombre": "Sistemas Operativos",
+        "creditos": 4
+      }
     ]
   },
   {
@@ -171,9 +259,84 @@
       "carrera": "Ingeniería Industrial"
     },
     "materias": [
-      { "id": 2, "nombre": "Física", "creditos": 3 },
-      { "id": 6, "nombre": "Estructuras de Datos", "creditos": 3 },
-      { "id": 10, "nombre": "Inteligencia Artificial", "creditos": 5 }
+      {
+        "id": 2,
+        "nombre": "Física",
+        "creditos": 3
+      },
+      {
+        "id": 6,
+        "nombre": "Estructuras de Datos",
+        "creditos": 3
+      },
+      {
+        "id": 10,
+        "nombre": "Inteligencia Artificial",
+        "creditos": 5
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "primerNombre": "joshan",
+    "segundoNombre": "ire",
+    "primerApellido": "pereira",
+    "segundoApellido": "cabrera",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "6336869",
+    "fechaNacimiento": "2008-03-10",
+    "matricula": {
+      "id": 9,
+      "costo": 20000,
+      "promocion": "ninguna",
+      "fecha": "2026-06-12",
+      "carrera": "ADSO"
+    },
+    "materias": [
+      {
+        "id": 1,
+        "nombre": "programcio",
+        "creditos": 2
+      },
+      {
+        "id": 2,
+        "nombre": "base de datos",
+        "creditos": 4
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "primerNombre": "mauricio",
+    "segundoNombre": "jose",
+    "primerApellido": "rivero",
+    "segundoApellido": "padiila",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "123456789",
+    "fechaNacimiento": "1984-01-02",
+    "matricula": {
+      "id": 10,
+      "costo": 200000,
+      "promocion": "ninguna",
+      "fecha": "2026-06-04",
+      "carrera": "ADSO"
+    },
+    "materias": [
+      {
+        "id": 1,
+        "nombre": "programacion",
+        "creditos": 6
+      },
+      {
+        "id": 2,
+        "nombre": "mate",
+        "creditos": 4
+      },
+      {
+        "id": 3,
+        "nombre": "algreba",
+        "creditos": 8
+      }
     ]
   },
   {

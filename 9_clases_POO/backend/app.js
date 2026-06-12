@@ -172,9 +172,54 @@ const PUERTO = 3000;
 // -----------------------------------------------------------------------------
 const CABECERAS_CORS = {
     'Access-Control-Allow-Origin':  '*',
-    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type'
 };
+
+// -----------------------------------------------------------------------------
+// FUNCIÓN: serializarEstudiantes()
+// -----------------------------------------------------------------------------
+// Convierte los objetos de clase a objetos planos para poder guardarlos en JSON.
+// -----------------------------------------------------------------------------
+function serializarEstudiantes(estudiantes) {
+    return estudiantes.map(function(est) {
+        return {
+            id:               est.getId(),
+            primerNombre:     est.getPrimerNombre(),
+            segundoNombre:    est.getSegundoNombre(),
+            primerApellido:   est.getPrimerApellido(),
+            segundoApellido:  est.getSegundoApellido(),
+            tipoDocumento:    est.getTipoDocumento(),
+            numeroDocumento:  est.getNumeroDocumento(),
+            fechaNacimiento:  est.getFechaNacimiento(),
+            matricula: {
+                id:       est.getMatricula().getId(),
+                costo:    est.getMatricula().getCosto(),
+                promocion:est.getMatricula().getPromocion(),
+                fecha:    est.getMatricula().getFecha(),
+                carrera:  est.getMatricula().getCarrera()
+            },
+            materias: est.getMaterias().map(function(mat) {
+                return {
+                    id:       mat.getId(),
+                    nombre:   mat.getNombre(),
+                    creditos: mat.getCreditos()
+                };
+            })
+        };
+    });
+}
+
+// -----------------------------------------------------------------------------
+// FUNCIÓN: guardarEstudiantes()
+// -----------------------------------------------------------------------------
+// Persiste en disco el arreglo de estudiantes ya serializado.
+// -----------------------------------------------------------------------------
+function guardarEstudiantes(estudiantes) {
+    const rutaArchivo = path.join(__dirname, 'datos', 'estudiantes.json');
+    const contenido = JSON.stringify(serializarEstudiantes(estudiantes), null, 2);
+    fs.writeFileSync(rutaArchivo, contenido, 'utf-8');
+}
 
 const servidor = http.createServer(function(req, res) {
 
@@ -206,34 +251,73 @@ const servidor = http.createServer(function(req, res) {
         // indentación de 2 espacios para que sea legible.
         // Usamos map() para serializar solo las propiedades relevantes,
         // ya que los campos privados (#campo) no son visibles por JSON.stringify.
-        const respuesta = listaEstudiantes.map(function(est) {
-            return {
-                id:               est.getId(),
-                primerNombre:     est.getPrimerNombre(),
-                segundoNombre:    est.getSegundoNombre(),
-                primerApellido:   est.getPrimerApellido(),
-                segundoApellido:  est.getSegundoApellido(),
-                tipoDocumento:    est.getTipoDocumento(),
-                numeroDocumento:  est.getNumeroDocumento(),
-                fechaNacimiento:  est.getFechaNacimiento(),
-                matricula: {
-                    id:       est.getMatricula().getId(),
-                    costo:    est.getMatricula().getCosto(),
-                    promocion:est.getMatricula().getPromocion(),
-                    fecha:    est.getMatricula().getFecha(),
-                    carrera:  est.getMatricula().getCarrera()
-                },
-                materias: est.getMaterias().map(function(mat) {
-                    return {
-                        id:       mat.getId(),
-                        nombre:   mat.getNombre(),
-                        creditos: mat.getCreditos()
-                    };
-                })
-            };
-        });
+        const respuesta = serializarEstudiantes(listaEstudiantes);
 
         res.end(JSON.stringify(respuesta, null, 2));
+
+    } else if (req.method === 'POST' && req.url === '/estudiantes') {
+
+        let cuerpo = '';
+
+        req.on('data', function(chunk) {
+            cuerpo += chunk;
+        });
+
+        req.on('end', function() {
+            try {
+                const datos = JSON.parse(cuerpo || '{}');
+
+                // Validacion basica de campos obligatorios
+                if (!datos.primerNombre || !datos.primerApellido || !datos.tipoDocumento || !datos.numeroDocumento) {
+                    res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8', ...CABECERAS_CORS });
+                    res.end(JSON.stringify({ error: 'Faltan datos obligatorios del estudiante.' }));
+                    return;
+                }
+
+                const idNuevo = listaEstudiantes.length > 0
+                    ? Math.max.apply(null, listaEstudiantes.map(function(est) { return est.getId(); })) + 1
+                    : 1;
+
+                const materiasEntrada = Array.isArray(datos.materias) ? datos.materias : [];
+                const materias = materiasEntrada.map(function(mat, index) {
+                    return new Materia(
+                        index + 1,
+                        mat.nombre,
+                        Number(mat.creditos) || 0
+                    );
+                });
+
+                const matricula = new Matricula(
+                    idNuevo,
+                    Number(datos.matricula && datos.matricula.costo) || 0,
+                    (datos.matricula && datos.matricula.promocion) || '',
+                    (datos.matricula && datos.matricula.fecha) || '',
+                    (datos.matricula && datos.matricula.carrera) || ''
+                );
+
+                const estudiante = new Estudiante(
+                    idNuevo,
+                    datos.primerNombre,
+                    datos.segundoNombre || '',
+                    datos.primerApellido,
+                    datos.segundoApellido || '',
+                    datos.tipoDocumento,
+                    datos.numeroDocumento,
+                    datos.fechaNacimiento || '',
+                    matricula,
+                    materias
+                );
+
+                listaEstudiantes.push(estudiante);
+                guardarEstudiantes(listaEstudiantes);
+
+                res.writeHead(201, { 'Content-Type': 'application/json; charset=utf-8', ...CABECERAS_CORS });
+                res.end(JSON.stringify({ mensaje: 'Estudiante guardado correctamente.' }));
+            } catch (error) {
+                res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8', ...CABECERAS_CORS });
+                res.end(JSON.stringify({ error: 'JSON invalido o datos incorrectos.' }));
+            }
+        });
 
     } else {
 
