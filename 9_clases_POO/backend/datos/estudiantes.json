@@ -175,5 +175,27 @@
       { "id": 6, "nombre": "Estructuras de Datos", "creditos": 3 },
       { "id": 10, "nombre": "Inteligencia Artificial", "creditos": 5 }
     ]
+  },
+  {
+    "id": 9,
+    "primerNombre": "Mauricio",
+    "segundoNombre": "Jose",
+    "primerApellido": "Rivero",
+    "segundoApellido": "Padilla",
+    "tipoDocumento": "Cédula de Ciudadanía",
+    "numeroDocumento": "345678987",
+    "fechaNacimiento": "2001-04-18",
+    "matricula": {
+      "id": 2,
+      "costo": 450000,
+      "promocion": "Promoción 2006",
+      "fecha": "2024-01-01",
+      "carrera": "Ingeniería Sistemas"
+    },
+    "materias": [
+      { "id": 2, "nombre": "Física", "creditos": 3 },
+      { "id": 6, "nombre": "Estructuras de Datos", "creditos": 3 },
+      { "id": 10, "nombre": "Inteligencia Artificial", "creditos": 5 }
+    ]
   }
 ]
