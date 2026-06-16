@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NASA Mars Rover API — Explorador de Fotos</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="header">
+    <h1 class="header__title">🛰️ Explorador Mars Rover</h1>
+    <p class="header__subtitle">
+      Consume la API pública de fotos de los rovers de la NASA
+      (Curiosity, Perseverance, Opportunity y Spirit).
+    </p>
+    <code class="header__endpoint">GET /api/v1/photos/{id}</code>
+  </header>
+
+  <main class="main">
+    <!-- ===================== BUSCADOR ===================== -->
+    <!-- Endpoint #1: "Search by Photo ID" -->
+    <section class="search" aria-labelledby="search-title">
+      <h2 id="search-title" class="search__title">Buscar por ID de Foto</h2>
+
+      <!-- Usamos un <form> para capturar tanto el click como el Enter -->
+      <form id="search-form" class="search__form" novalidate>
+        <label class="search__label" for="photo-id">ID de la foto</label>
+        <div class="search__row">
+          <input
+            id="photo-id"
+            class="search__input"
+            type="number"
+            min="1"
+            step="1"
+            placeholder="Ej: 878"
+            inputmode="numeric"
+            required
+          />
+          <button id="search-btn" class="search__btn" type="submit">
+            🔍 Buscar
+          </button>
+        </div>
+        <p class="search__hint">
+          Prueba con IDs como <button type="button" class="chip" data-id="878">878</button>
+          <button type="button" class="chip" data-id="102685">102685</button>
+          <button type="button" class="chip" data-id="50000">50000</button>
+        </p>
+      </form>
+    </section>
+
+    <!-- ===================== ESTADOS / RESULTADO ===================== -->
+    <section class="results" aria-live="polite">
+      <!-- Estado: cargando -->
+      <div id="loader" class="loader hidden">
+        <span class="loader__spinner" aria-hidden="true"></span>
+        <span>Contactando con Marte...</span>
+      </div>
+
+      <!-- Estado: error -->
+      <div id="error" class="message message--error hidden"></div>
+
+      <!-- Estado: inicial / vacío -->
+      <div id="empty" class="message message--empty">
+        Ingresa un ID de foto para comenzar la exploración. 🚀
+      </div>
+
+      <!-- Estado: resultado (se rellena por JS) -->
+      <article id="card" class="card hidden"></article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>SENA 3406211 · Vanilla JS · fetch + Promises + async/await + eventos del DOM</p>
+  </footer>
+
+  <!-- El orden importa: primero la capa de API, luego la capa de UI -->
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
