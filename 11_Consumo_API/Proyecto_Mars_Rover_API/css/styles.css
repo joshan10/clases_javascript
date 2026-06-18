@@ -1,0 +1,212 @@
+/* =============================================================
+ * styles.css — Tema espacial / marciano
+ * ============================================================= */
+
+:root {
+  --bg: #0b0d1a;
+  --bg-panel: #161a2e;
+  --bg-panel-2: #1f2540;
+  --mars: #c1440e;
+  --mars-light: #e8703a;
+  --text: #eef1f7;
+  --text-dim: #9aa2bd;
+  --border: #2a3055;
+  --ok: #3ddc97;
+  --err: #ff6b6b;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(193, 68, 14, 0.25), transparent),
+    radial-gradient(900px 500px at 10% 0%, rgba(61, 90, 220, 0.18), transparent),
+    var(--bg);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* ----------------------- Encabezado ----------------------- */
+.header {
+  text-align: center;
+  padding: 48px 20px 28px;
+}
+.header__title { font-size: 2.2rem; letter-spacing: 0.5px; }
+.header__subtitle {
+  color: var(--text-dim);
+  max-width: 620px;
+  margin: 10px auto 0;
+}
+.header__endpoint {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--mars-light);
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* ------------------------- Layout ------------------------- */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* ------------------------ Buscador ------------------------ */
+.search {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.search__title { font-size: 1.3rem; margin-bottom: 16px; }
+.search__label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.search__row { display: flex; gap: 10px; }
+.search__input {
+  flex: 1;
+  padding: 12px 14px;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search__input:focus { border-color: var(--mars-light); }
+.search__btn {
+  padding: 12px 20px;
+  background: var(--mars);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.05s;
+}
+.search__btn:hover { background: var(--mars-light); }
+.search__btn:active { transform: scale(0.98); }
+.search__btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.search__hint {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.chip {
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  color: var(--mars-light);
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+}
+.chip:hover { border-color: var(--mars-light); }
+
+/* ------------------------ Resultados ---------------------- */
+.results { margin-top: 24px; }
+.hidden { display: none !important; }
+
+/* Mensajes de estado */
+.message {
+  text-align: center;
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
+  color: var(--text-dim);
+}
+.message--error {
+  border-style: solid;
+  border-color: var(--err);
+  background: rgba(255, 107, 107, 0.08);
+  color: #ffd2d2;
+}
+
+/* Cargando */
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px;
+  color: var(--text-dim);
+}
+.loader__spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--border);
+  border-top-color: var(--mars-light);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Tarjeta de resultado */
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.card__media { background: #000; }
+.card__img { width: 100%; display: block; aspect-ratio: 16 / 10; object-fit: cover; }
+.card__body { padding: 22px; }
+.card__badge {
+  display: inline-block;
+  background: var(--mars);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.card__title { margin: 12px 0 18px; font-size: 1.5rem; }
+.card__data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.card__data dt { color: var(--text-dim); font-size: 0.8rem; }
+.card__data dd { font-weight: 600; margin-top: 2px; }
+.card__link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--mars-light);
+  text-decoration: none;
+  font-weight: 600;
+}
+.card__link:hover { text-decoration: underline; }
+
+/* -------------------------- Footer ------------------------ */
+.footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ----------------------- Responsive ----------------------- */
+@media (max-width: 520px) {
+  .search__row { flex-direction: column; }
+  .card__data { grid-template-columns: 1fr; }
+  .header__title { font-size: 1.7rem; }
+}
